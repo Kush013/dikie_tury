@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДИКИЕ ТУРЫ - Экстремальный и активный туризм</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/mountain.png">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-mountain"></i>
+                <span>ДИКИЕ ТУРЫ</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#tours">Туры</a></li>
+                    <li><a href="#activities">Активности</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Помогаем путешествовать по дорогам жизни <span class="highlight">💫</span></h1>
+            <p class="hero-subtitle">Экстремальный и активный туризм по самым красивым и диким местам</p>
+            <a href="#tours" class="btn btn-primary">Выбрать приключение</a>
+        </div>
+
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Самое дорогое что у нас есть - это впечатления и воспоминания! <span class="highlight">💚</span></h2>
+                <p class="section-subtitle">ООО "ДИКИЕ ТУРЫ" - профессиональный туроператор экстремального и активного туризма</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Мы создаем незабываемые приключения для тех, кто ищет адреналин и хочет вырваться из рутины. Наши туры - это не просто отдых, это возможность проверить себя, открыть новые горизонты и получить эмоции, которые останутся с вами на всю жизнь.</p>
+
+                    <div class="certificate">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h3>Реестровый номер туроператора</h3>
+                            <p class="certificate-number">РТО 025154</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-text">Видов активностей</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-text">Довольных туристов</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">7</span>
+                        <span class="stat-text">Лет опыта</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities section-padding" id="activities">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши активности</h2>
+                <p class="section-subtitle">Выберите свой вид экстремального отдыха</p>
+            </div>
+
+            <div class="activities-grid" id="activities-container">
+                <!-- Активности будут загружены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tours Section -->
+    <section class="tours section-padding" id="tours">
+        <div class="container">
+            <div class="section-header">
+                <h2>Популярные туры по Кавказу</h2>
+                <p class="section-subtitle">Откройте для себя величие гор и мощь природы</p>
+            </div>
+
+            <div class="tours-grid">
+                <div class="tour-card">
+                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <span class="tour-tag">Треккинг</span>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Эльбрус: Восхождение на Западную вершину</h3>
+                        <p>7-дневный тур с восхождением на высшую точку Европы с опытными гидами</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-calendar"></i> 7 дней</span>
+                            <span><i class="fas fa-user"></i> Средняя сложность</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline">Забронировать</a>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <span class="tour-tag">Джиппинг</span>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Джип-тур по горной Ингушетии</h3>
+                        <p>Экстремальное путешествие на внедорожниках по самым труднодоступным местам Кавказа</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-calendar"></i> 5 дней</span>
+                            <span><i class="fas fa-user"></i> Для начинающих</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline">Забронировать</a>
+                    </div>
+                </div>
+
+                <div class="tour-card">
+                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1536152471326-6427c9af4d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <span class="tour-tag">Рафтинг</span>
+                    </div>
+                    <div class="tour-content">
+                        <h3>Рафтинг по реке Терек</h3>
+                        <p>Спуск по бурным водам одной из самых живописных рек Кавказа с инструкторами</p>
+                        <div class="tour-details">
+                            <span><i class="fas fa-calendar"></i> 3 дня</span>
+                            <span><i class="fas fa-user"></i> Высокая сложность</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Свяжитесь с нами</h2>
+                <p class="section-subtitle">Готовы к приключению? Мы ждем ваших вопросов и заявок!</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:wild_tours@list.ru">wild_tours@list.ru</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Телефон</h3>
+                            <a href="tel:+78001234567">8 (800) 123-45-67</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>Мы в соцсетях</h3>
+                        <div class="social-icons">
+                            <a href="https://t.me/dikie_tury" target="_blank" class="social-icon">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://ok.ru/group/70000003267194" target="_blank" class="social-icon">
+                                <i class="fab fa-odnoklassniki"></i>
+                            </a>
+                            <a href="https://www.instagram.com/dikie_tury" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://vk.com" target="_blank" class="social-icon">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="license">
+                        <i class="fas fa-file-contract"></i>
+                        <div>
+                            <h3>Реестровый номер</h3>
+                            <p>РТО 025154</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="booking-form">
+                        <h3>Заявка на тур</h3>
+
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Телефон" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <select id="tour-type" required>
+                                <option value="" disabled selected>Выберите тип тура</option>
+                                <option value="trekking">Треккинг</option>
+                                <option value="climbing">Восхождения</option>
+                                <option value="jeeping">Джиппинг</option>
+                                <option value="rafting">Рафтинг</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Сообщение или пожелания"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo">
+                        <i class="fas fa-mountain"></i>
+                        <span>ДИКИЕ ТУРЫ</span>
+                    </a>
+                    <p>Помогаем путешествовать по дорогам жизни 💫</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Быстрые ссылки</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#tours">Туры</a></li>
+                        <li><a href="#activities">Активности</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-envelope"></i> wild_tours@list.ru</p>
+                    <p><i class="fas fa-phone"></i> 8 (800) 123-45-67</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ООО "ДИКИЕ ТУРЫ". Все права защищены.</p>
+                <p>Реестровый номер туроператора: РТО 025154</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
