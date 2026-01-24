@@ -9,15 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/mountain.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
     <!-- Header & Navigation -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-mountain"></i>
-                <span>ДИКИЕ ТУРЫ</span>
+                <img src="images/logo_dikie_tury_horizontal_2.png" alt="ДИКИЕ ТУРЫ" class="logo-image">
             </a>
 
             <nav>
@@ -28,6 +27,10 @@
                     <li><a href="#activities">Активности</a></li>
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
+
+<!--                <a href="https://t.me/dikie_tury" target="_blank" class="btn-telegram-header">-->
+<!--                    <i class="fab fa-telegram"></i> Написать в Telegram-->
+<!--                </a>-->
 
                 <div class="burger">
                     <span></span>
@@ -40,11 +43,17 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-overlay"></div>
+        <div class="hero-background"></div>
+
         <div class="container hero-content">
             <h1 class="hero-title">Помогаем путешествовать по дорогам жизни <span class="highlight">💫</span></h1>
             <p class="hero-subtitle">Экстремальный и активный туризм по самым красивым и диким местам</p>
-            <a href="#tours" class="btn btn-primary">Выбрать приключение</a>
+            <div class="hero-buttons">
+                <a href="#tours" class="btn btn-primary">Выбрать приключение</a>
+                <a href="https://t.me/dikie_tury" target="_blank" class="btn btn-telegram">
+                    <i class="fab fa-telegram"></i> Задать вопрос
+                </a>
+            </div>
         </div>
 
         <div class="scroll-indicator">
@@ -63,14 +72,6 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>Мы создаем незабываемые приключения для тех, кто ищет адреналин и хочет вырваться из рутины. Наши туры - это не просто отдых, это возможность проверить себя, открыть новые горизонты и получить эмоции, которые останутся с вами на всю жизнь.</p>
-
-                    <div class="certificate">
-                        <i class="fas fa-award"></i>
-                        <div>
-                            <h3>Реестровый номер туроператора</h3>
-                            <p class="certificate-number">РТО 025154</p>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="about-stats">
@@ -115,47 +116,68 @@
 
             <div class="tours-grid">
                 <div class="tour-card">
-                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="tour-image">
+                        <img src="images/tours/elbrus_tour.jpg" alt="Восхождение на Эльбрус" loading="lazy">
                         <span class="tour-tag">Треккинг</span>
                     </div>
                     <div class="tour-content">
                         <h3>Эльбрус: Восхождение на Западную вершину</h3>
-                        <p>7-дневный тур с восхождением на высшую точку Европы с опытными гидами</p>
+                        <p>7-дневный тур с восхождением на высшую точку Европы с опытными гидами. Проживание в горных приютах, питание и необходимое снаряжение включены.</p>
                         <div class="tour-details">
                             <span><i class="fas fa-calendar"></i> 7 дней</span>
                             <span><i class="fas fa-user"></i> Средняя сложность</span>
+                            <span><i class="fas fa-ruble-sign"></i> от 35 000 ₽</span>
                         </div>
-                        <a href="#contact" class="btn btn-outline">Забронировать</a>
+                        <div class="tour-buttons">
+                            <a href="#contact" class="btn btn-outline">Забронировать</a>
+<!--                            <a href="https://t.me/dikie_tury" target="_blank" class="btn btn-telegram">-->
+<!--                                <i class="fab fa-telegram"></i> Подробнее-->
+<!--                            </a>-->
+                        </div>
                     </div>
                 </div>
 
                 <div class="tour-card">
-                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="tour-image">
+                        <img src="images/tours/jeep_tour.png" alt="Джип-тур по Ингушетии" loading="lazy">
                         <span class="tour-tag">Джиппинг</span>
                     </div>
                     <div class="tour-content">
                         <h3>Джип-тур по горной Ингушетии</h3>
-                        <p>Экстремальное путешествие на внедорожниках по самым труднодоступным местам Кавказа</p>
+                        <p>Экстремальное путешествие на внедорожниках по самым труднодоступным местам Кавказа. Посещение древних башен, горных селений и водопадов.</p>
                         <div class="tour-details">
                             <span><i class="fas fa-calendar"></i> 5 дней</span>
                             <span><i class="fas fa-user"></i> Для начинающих</span>
+                            <span><i class="fas fa-ruble-sign"></i> от 25 000 ₽</span>
                         </div>
-                        <a href="#contact" class="btn btn-outline">Забронировать</a>
+                        <div class="tour-buttons">
+                            <a href="#contact" class="btn btn-outline">Забронировать</a>
+<!--                            <a href="https://t.me/dikie_tury" target="_blank" class="btn btn-telegram">-->
+<!--                                <i class="fab fa-telegram"></i> Подробнее-->
+<!--                            </a>-->
+                        </div>
                     </div>
                 </div>
 
                 <div class="tour-card">
-                    <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1536152471326-6427c9af4d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="tour-image">
+                        <img src="images/tours/rafting_tour.png" alt="Рафтинг по Тереку" loading="lazy">
                         <span class="tour-tag">Рафтинг</span>
                     </div>
                     <div class="tour-content">
                         <h3>Рафтинг по реке Терек</h3>
-                        <p>Спуск по бурным водам одной из самых живописных рек Кавказа с инструкторами</p>
+                        <p>Спуск по бурным водам одной из самых живописных рек Кавказа с инструкторами. Проживание в кемпингах на берегу реки, питание, снаряжение.</p>
                         <div class="tour-details">
                             <span><i class="fas fa-calendar"></i> 3 дня</span>
                             <span><i class="fas fa-user"></i> Высокая сложность</span>
+                            <span><i class="fas fa-ruble-sign"></i> от 15 000 ₽</span>
                         </div>
-                        <a href="#contact" class="btn btn-outline">Забронировать</a>
+                        <div class="tour-buttons">
+                            <a href="#contact" class="btn btn-outline">Забронировать</a>
+<!--                            <a href="https://t.me/dikie_tury" target="_blank" class="btn btn-telegram">-->
+<!--                                <i class="fab fa-telegram"></i> Подробнее-->
+<!--                            </a>-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,7 +206,7 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Телефон</h3>
-                            <a href="tel:+78001234567">8 (800) 123-45-67</a>
+                            <a href="tel:+79388851988">8 (938) 885-19-88</a>
                         </div>
                     </div>
 
@@ -200,18 +222,18 @@
                             <a href="https://www.instagram.com/dikie_tury" target="_blank" class="social-icon">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="https://vk.com" target="_blank" class="social-icon">
+                            <a href="https://vk.com/dikie_tury" target="_blank" class="social-icon">
                                 <i class="fab fa-vk"></i>
                             </a>
                         </div>
                     </div>
 
-                    <div class="license">
-                        <i class="fas fa-file-contract"></i>
-                        <div>
-                            <h3>Реестровый номер</h3>
-                            <p>РТО 025154</p>
-                        </div>
+                    <div class="telegram-widget">
+                        <h3>Напишите нам напрямую в Telegram</h3>
+                        <a href="https://t.me/+79388851988" target="_blank" class="btn btn-telegram-large">
+                            <i class="fab fa-telegram"></i> Открыть чат в Telegram
+                        </a>
+                        <p class="telegram-hint">Быстрые ответы на все вопросы</p>
                     </div>
                 </div>
 
@@ -259,8 +281,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <a href="#" class="logo">
-                        <i class="fas fa-mountain"></i>
-                        <span>ДИКИЕ ТУРЫ</span>
+                        <img src="images/logo_dikie_tury_horizontal_2.png" alt="ДИКИЕ ТУРЫ" class="logo-footer">
                     </a>
                     <p>Помогаем путешествовать по дорогам жизни 💫</p>
                 </div>
@@ -279,7 +300,12 @@
                 <div class="footer-contact">
                     <h4>Контакты</h4>
                     <p><i class="fas fa-envelope"></i> wild_tours@list.ru</p>
-                    <p><i class="fas fa-phone"></i> 8 (800) 123-45-67</p>
+                    <p><i class="fas fa-phone"></i> 8 (938) 885-19-88</p>
+                    <div class="footer-telegram">
+                        <a href="https://t.me/dikie_tury" target="_blank" class="btn btn-telegram-small">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                    </div>
                 </div>
             </div>
 

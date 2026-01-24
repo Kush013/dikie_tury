@@ -10,6 +10,7 @@
     --accent: #e63946;
     --light: #f8f9fa;
     --dark: #212529;
+    --telegram: #0088cc;
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 
@@ -39,12 +40,11 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    padding: 15px 0;
     transition: var(--transition);
+    backdrop-filter: blur(10px);
 }
 
 header.scrolled {
-    padding: 10px 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,17 +55,30 @@ header.scrolled {
 }
 
 .logo {
-    color: var(--secondary);
-    font-size: 1.8rem;
-    font-weight: 800;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-.logo i {
-    font-size: 2rem;
+.logo-image {
+    height: 85px;
+    width: auto;
+    transition: var(--transition);
+}
+
+header.scrolled .logo-image {
+    height: 50px;
+}
+
+.logo-footer {
+    height: 50px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-links {
@@ -103,6 +116,28 @@ header.scrolled {
     width: 100%;
 }
 
+/* Кнопка Telegram в шапке */
+.btn-telegram-header {
+    background-color: var(--telegram);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.btn-telegram-header:hover {
+    background-color: #0077b5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+}
+
 .burger {
     display: none;
     flex-direction: column;
@@ -120,60 +155,134 @@ header.scrolled {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--light);
-    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+        url('images/hero_background.jpg') no-repeat center center/cover;
+    z-index: -1;
+    animation: backgroundZoom 20s infinite alternate ease-in-out;
 }
 
 .hero-content {
+    position: relative;
     z-index: 2;
     max-width: 900px;
+    padding: 20px;
+    animation: fadeInUp 1.2s ease-out;
 }
 
 .hero-title {
     font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.highlight {
-    color: var(--secondary);
+    /*text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);*/
+    background: linear-gradient(90deg, #ffffff 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 40px;
     opacity: 0.9;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--light);
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes backgroundZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Кнопки */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
     transition: var(--transition);
     border: 2px solid transparent;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .btn-primary {
     background-color: var(--accent);
     color: var(--light);
+    border-color: var(--accent);
+    animation: pulse 2s infinite;
 }
 
 .btn-primary:hover {
-    background-color: transparent;
-    border-color: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(230, 57, 70, 0.2);
 }
 
 .btn-outline {
@@ -185,31 +294,61 @@ header.scrolled {
 .btn-outline:hover {
     background-color: var(--primary);
     color: var(--light);
+    transform: translateY(-3px);
+}
+
+/* Кнопка Telegram */
+.btn-telegram {
+    background-color: var(--telegram);
+    color: white;
+    border: 2px solid var(--telegram);
+    padding: 15px 25px;
+}
+
+.btn-telegram:hover {
+    background-color: #0077b5;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+}
+
+.btn-telegram-large {
+    background-color: var(--telegram);
+    color: white;
+    padding: 18px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    transition: var(--transition);
+}
+
+.btn-telegram-large:hover {
+    background-color: #0077b5;
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 136, 204, 0.3);
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
+.btn-telegram-small {
+    background-color: var(--telegram);
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
-.scroll-indicator i {
-    color: var(--light);
-    font-size: 1.8rem;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4);
     }
-    40% {
-        transform: translateY(-20px) translateX(-50%);
+    70% {
+        box-shadow: 0 0 0 10px rgba(230, 57, 70, 0);
     }
-    60% {
-        transform: translateY(-10px) translateX(-50%);
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
     }
 }
 
@@ -234,6 +373,10 @@ header.scrolled {
     color: #666;
     max-width: 700px;
     margin: 0 auto;
+}
+
+.highlight {
+    color: var(--secondary);
 }
 
 /* About Section */
@@ -384,6 +527,8 @@ header.scrolled {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .tour-card:hover {
@@ -393,9 +538,19 @@ header.scrolled {
 
 .tour-image {
     height: 250px;
-    background-size: cover;
-    background-position: center;
     position: relative;
+    overflow: hidden;
+}
+
+.tour-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tour-card:hover .tour-image img {
+    transform: scale(1.1);
 }
 
 .tour-tag {
@@ -408,10 +563,14 @@ header.scrolled {
     border-radius: 20px;
     font-weight: 600;
     font-size: 0.9rem;
+    z-index: 1;
 }
 
 .tour-content {
     padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .tour-content h3 {
@@ -423,6 +582,7 @@ header.scrolled {
 .tour-content p {
     color: #666;
     margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .tour-details {
@@ -431,11 +591,27 @@ header.scrolled {
     margin-bottom: 20px;
     color: #777;
     font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .tour-details i {
     margin-right: 5px;
     color: var(--secondary);
+}
+
+.tour-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    flex-wrap: wrap;
+}
+
+.tour-buttons .btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
 }
 
 /* Contact Section */
@@ -513,6 +689,29 @@ header.scrolled {
     transform: translateY(-5px);
 }
 
+/* Telegram Widget */
+.telegram-widget {
+    background: linear-gradient(135deg, var(--telegram) 0%, #0077b5 100%);
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    margin-top: 30px;
+}
+
+.telegram-widget h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.telegram-hint {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Contact Form */
 .contact-form {
     background-color: var(--light);
     padding: 40px;
@@ -541,6 +740,7 @@ header.scrolled {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     transition: var(--transition);
+    background-color: white;
 }
 
 .form-group input:focus,
@@ -549,6 +749,13 @@ header.scrolled {
     outline: none;
     border-color: var(--secondary);
     box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+    margin-top: 10px;
 }
 
 /* Footer */
@@ -563,16 +770,23 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     margin-bottom: 50px;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-logo .logo {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
 }
 
 .footer-logo p {
     opacity: 0.8;
     line-height: 1.8;
+    margin-top: 15px;
 }
 
 .footer-links h4,
@@ -611,12 +825,20 @@ footer {
     opacity: 0.8;
 }
 
+.footer-telegram {
+    margin-top: 15px;
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
     text-align: center;
     opacity: 0.7;
     font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin-bottom: 10px;
 }
 
 /* Responsive Styles */
@@ -638,9 +860,31 @@ footer {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .nav-links {
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
     .nav-links {
         position: fixed;
         top: 70px;
@@ -654,10 +898,15 @@ footer {
         padding-top: 50px;
         gap: 40px;
         transition: var(--transition);
+        z-index: 999;
     }
 
     .nav-links.active {
         left: 0;
+    }
+
+    .btn-telegram-header {
+        display: none;
     }
 
     .burger {
@@ -676,14 +925,6 @@ footer {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    .hero-title {
-        font-size: 2.2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
     .section-header h2 {
         font-size: 2rem;
     }
@@ -693,9 +934,21 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .tour-buttons {
+        flex-direction: column;
+    }
+
+    .tour-buttons .btn {
+        width: 100%;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .contact-form {
+        padding: 25px;
     }
 }
 
@@ -721,5 +974,18 @@ footer {
     .stat {
         flex: 1;
         min-width: 140px;
+    }
+
+    .tour-details {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .logo-image {
+        height: 75px;
+    }
+
+    header.scrolled .logo-image {
+        height: 40px;
     }
 }

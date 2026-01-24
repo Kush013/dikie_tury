@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 // Закрытие мобильного меню
-                document.querySelector('.nav-links').classList.remove('active');
-                document.querySelector('.burger').classList.remove('active');
+                document.querySelector('.nav-links')?.classList.remove('active');
+                document.querySelector('.burger')?.classList.remove('active');
             }
         });
     });
@@ -55,10 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
 
-    burger.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        burger.classList.toggle('active');
-    });
+    if (burger && navLinks) {
+        burger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+    }
 
     // Загрузка активностей из данных
     const activitiesData = [
@@ -156,25 +158,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const activitiesContainer = document.getElementById('activities-container');
 
-    activitiesData.forEach(activity => {
-        const activityCard = document.createElement('div');
-        activityCard.className = 'activity-card';
+    if (activitiesContainer) {
+        activitiesData.forEach(activity => {
+            const activityCard = document.createElement('div');
+            activityCard.className = 'activity-card';
 
-        activityCard.innerHTML = `
-            <div class="activity-icon">
-                <i class="${activity.icon}"></i>
-            </div>
-            <div class="activity-content">
-                <h3>${activity.name}</h3>
-                <p>${activity.description}</p>
-                <div class="activity-tags">
-                    ${activity.tags.map(tag => `<span class="activity-tag">${tag}</span>`).join('')}
+            activityCard.innerHTML = `
+                <div class="activity-icon">
+                    <i class="${activity.icon}"></i>
                 </div>
-            </div>
-        `;
+                <div class="activity-content">
+                    <h3>${activity.name}</h3>
+                    <p>${activity.description}</p>
+                    <div class="activity-tags">
+                        ${activity.tags.map(tag => `<span class="activity-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `;
 
-        activitiesContainer.appendChild(activityCard);
-    });
+            activitiesContainer.appendChild(activityCard);
+        });
+    }
 
     // Обработка формы бронирования
     const bookingForm = document.getElementById('booking-form');
@@ -219,4 +223,12 @@ document.addEventListener('DOMContentLoaded', function() {
             stat.textContent = Math.floor(currentValue) + (stat.textContent.includes('+') ? '+' : '');
         }, 50);
     });
+
+    // Добавляем класс анимации для элементов при первой загрузке
+    setTimeout(() => {
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            heroContent.classList.add('animated');
+        }
+    }, 300);
 });
