@@ -61,9 +61,11 @@ header.scrolled {
 }
 
 .logo-image {
-    height: 85px;
-    width: auto;
+    height: 85px; /* сохраняем высоту */
+    width: auto; /* ширина будет автоматической */
+    max-width: 200px; /* ОГРАНИЧЕНИЕ МАКСИМАЛЬНОЙ ШИРИНЫ */
     transition: var(--transition);
+    object-fit: contain; /* сохраняем пропорции */
 }
 
 header.scrolled .logo-image {
@@ -950,7 +952,13 @@ footer {
     .contact-form {
         padding: 25px;
     }
+
+    .logo-image {
+        max-width: 150px; /* еще меньше на мобильных */
+        height: 65px; /* уменьшаем высоту */
+    }
 }
+
 
 @media (max-width: 576px) {
     .hero-title {
@@ -988,4 +996,16 @@ footer {
     header.scrolled .logo-image {
         height: 40px;
     }
+
+    .logo-image {
+        max-width: 120px; /* минимальная ширина на маленьких экранах */
+        height: 55px;
+    }
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* предотвращает сжатие */
 }
