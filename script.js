@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Загрузка активностей из данных
-    const activitiesData = [
+    // Основные активности
+    const mainActivitiesData = [
         {
             name: "Треккинг",
             icon: "fas fa-hiking",
@@ -77,14 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
             tags: ["Экстрим", "Высота", "Альпинизм"]
         },
         {
-            name: "Отдых на природе",
-            icon: "fas fa-campground",
-            description: "Кемпинги и палаточные лагеря в живописных местах",
-            tags: ["Релакс", "Природа", "Кемпинг"]
-        },
-        {
             name: "Походы с ночёвкой",
-            icon: "fas fa-bed",
+            icon: "fas fa-campground",
             description: "Многодневные походы с оборудованными стоянками",
             tags: ["Приключения", "Ночь", "Поход"]
         },
@@ -94,6 +88,22 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Экстремальные поездки на внедорожниках по бездорожью",
             tags: ["Адреналин", "Внедорожник", "Экстрим"]
         },
+        {
+            name: "Экскурсии",
+            icon: "fas fa-map-marked-alt",
+            description: "Познавательные экскурсии по историческим местам",
+            tags: ["История", "Культура", "Знания"]
+        },
+        {
+            name: "Туры по Кавказу",
+            icon: "fas fa-globe-europe",
+            description: "Комбинированные туры по всему Кавказскому региону",
+            tags: ["Кавказ", "Мультитур", "Разнообразие"]
+        }
+    ];
+
+    // Дополнительные услуги
+    const servicesData = [
         {
             name: "Скалолазание",
             icon: "fas fa-hands-helping",
@@ -141,25 +151,13 @@ document.addEventListener('DOMContentLoaded', function() {
             icon: "fas fa-horse",
             description: "Конные походы и прогулки по живописным местам",
             tags: ["Лошади", "Природа", "Традиции"]
-        },
-        {
-            name: "Экскурсии",
-            icon: "fas fa-map-marked-alt",
-            description: "Познавательные экскурсии по историческим местам",
-            tags: ["История", "Культура", "Знания"]
-        },
-        {
-            name: "Туры по Кавказу",
-            icon: "fas fa-globe-europe",
-            description: "Комбинированные туры по всему Кавказскому региону",
-            tags: ["Кавказ", "Мультитур", "Разнообразие"]
         }
     ];
 
+// Загрузка основных активностей
     const activitiesContainer = document.getElementById('activities-container');
-
     if (activitiesContainer) {
-        activitiesData.forEach(activity => {
+        mainActivitiesData.forEach(activity => {
             const activityCard = document.createElement('div');
             activityCard.className = 'activity-card';
 
@@ -171,12 +169,36 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3>${activity.name}</h3>
                     <p>${activity.description}</p>
                     <div class="activity-tags">
-                        ${activity.tags.map(tag => `<span class="activity-tag">${tag}</span>`).join('')}
+                        ${activity.tags.map(tag => `<span class="activity-tag">#${tag}</span>`).join('')}
                     </div>
                 </div>
             `;
 
             activitiesContainer.appendChild(activityCard);
+        });
+    }
+
+    // Загрузка дополнительных услуг
+    const servicesContainer = document.getElementById('services-container');
+    if (servicesContainer) {
+        servicesData.forEach(service => {
+            const serviceCard = document.createElement('div');
+            serviceCard.className = 'activity-card';
+
+            serviceCard.innerHTML = `
+                <div class="activity-icon">
+                    <i class="${service.icon}"></i>
+                </div>
+                <div class="activity-content">
+                    <h3>${service.name}</h3>
+                    <p>${service.description}</p>
+                    <div class="activity-tags">
+                        ${service.tags.map(tag => `<span class="activity-tag">#${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+
+            servicesContainer.appendChild(serviceCard);
         });
     }
 

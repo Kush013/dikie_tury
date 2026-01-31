@@ -16,15 +16,14 @@
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="images/logo_dikie_tury_horizontal_2.png" alt="ДИКИЕ ТУРЫ" class="logo-image">
+                <img src="images/logo_dikie_tury_horizontal_3.png" alt="ДИКИЕ ТУРЫ" class="logo-image">
             </a>
 
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Главная</a></li>
-                    <li><a href="#about">О нас</a></li>
-                    <li><a href="#tours">Туры</a></li>
                     <li><a href="#activities">Активности</a></li>
+                    <li><a href="#tours">Туры</a></li>
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
 
@@ -50,9 +49,7 @@
             <p class="hero-subtitle">Экстремальный и активный туризм по самым красивым и диким местам</p>
             <div class="hero-buttons">
                 <a href="#tours" class="btn btn-primary">Выбрать приключение</a>
-                <a href="https://t.me/+79388851988" target="_blank" class="btn btn-telegram">
-                    <i class="fab fa-telegram"></i> Задать вопрос
-                </a>
+
             </div>
         </div>
 
@@ -61,47 +58,31 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about section-padding" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>Самое дорогое что у нас есть - это впечатления и воспоминания! <span class="highlight">💚</span></h2>
-                <p class="section-subtitle">ООО "ДИКИЕ ТУРЫ" - профессиональный туроператор экстремального и активного туризма</p>
-            </div>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Мы создаем незабываемые приключения для тех, кто ищет адреналин и хочет вырваться из рутины. Наши туры - это не просто отдых, это возможность проверить себя, открыть новые горизонты и получить эмоции, которые останутся с вами на всю жизнь.</p>
-                </div>
-
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">15+</span>
-                        <span class="stat-text">Видов активностей</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">1000+</span>
-                        <span class="stat-text">Довольных туристов</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">7</span>
-                        <span class="stat-text">Лет опыта</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Activities Section -->
+        <!-- Activities Section -->
     <section class="activities section-padding" id="activities">
         <div class="container">
             <div class="section-header">
-                <h2>Наши активности</h2>
+                <h2>Основные активности</h2>
                 <p class="section-subtitle">Выберите свой вид экстремального отдыха</p>
             </div>
 
             <div class="activities-grid" id="activities-container">
                 <!-- Активности будут загружены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services Section -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Что у нас есть еще?</h2>
+                <p class="section-subtitle">Дополнительные возможности для вашего приключения</p>
+            </div>
+
+            <div class="activities-grid" id="services-container">
+                <!-- Услуги будут загружены через JavaScript -->
             </div>
         </div>
     </section>
@@ -219,22 +200,13 @@
                             <a href="https://ok.ru/group/70000003267194" target="_blank" class="social-icon">
                                 <i class="fab fa-odnoklassniki"></i>
                             </a>
-                            <a href="https://www.instagram.com/dikie_tury" target="_blank" class="social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
                             <a href="https://vk.com/dikie_tury" target="_blank" class="social-icon">
                                 <i class="fab fa-vk"></i>
                             </a>
                         </div>
                     </div>
 
-                    <div class="telegram-widget">
-                        <h3>Напишите нам напрямую в Telegram</h3>
-                        <a href="https://t.me/+79388851988" target="_blank" class="btn btn-telegram-large">
-                            <i class="fab fa-telegram"></i> Открыть чат в Telegram
-                        </a>
-                        <p class="telegram-hint">Быстрые ответы на все вопросы</p>
-                    </div>
+
                 </div>
 
                 <div class="contact-form">
@@ -258,8 +230,10 @@
                                 <option value="" disabled selected>Выберите тип тура</option>
                                 <option value="trekking">Треккинг</option>
                                 <option value="climbing">Восхождения</option>
+                                <option value="overnight_hiking">Походы с ночевкой</option>
                                 <option value="jeeping">Джиппинг</option>
-                                <option value="rafting">Рафтинг</option>
+                                <option value="excursions">Экскурсии</option>
+                                <option value="caucasus_tours">Туры по Кавказу</option>
                                 <option value="other">Другое</option>
                             </select>
                         </div>
@@ -269,6 +243,12 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary">Отправить заявку</button>
+
+                        <div class="telegram-widget">
+                            <a href="https://t.me/+79388851988" target="_blank" class="btn btn-telegram-large">
+                                <i class="fab fa-telegram"></i> Напишите нам напрямую в Telegram
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -279,33 +259,29 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#" class="logo">
-                        <img src="images/logo_dikie_tury_horizontal_2.png" alt="ДИКИЕ ТУРЫ" class="logo-footer">
-                    </a>
-                    <p>Помогаем путешествовать по дорогам жизни 💫</p>
+                <div class="footer-column footer-center">
+                    <div class="footer-logo">
+                        <a href="#" class="logo">
+                            <img src="images/logo_dikie_tury_horizontal_3.png" alt="ДИКИЕ ТУРЫ" class="logo-footer">
+                        </a>
+                        <p>Помогаем путешествовать по дорогам жизни 💫</p>
+                    </div>
                 </div>
 
-                <div class="footer-links">
+                <div class="footer-column footer-links">
                     <h4>Быстрые ссылки</h4>
                     <ul>
                         <li><a href="#home">Главная</a></li>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#tours">Туры</a></li>
                         <li><a href="#activities">Активности</a></li>
+                        <li><a href="#tours">Туры</a></li>
                         <li><a href="#contact">Контакты</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-contact">
+                <div class="footer-column footer-contact">
                     <h4>Контакты</h4>
                     <p><i class="fas fa-envelope"></i> wild_tours@list.ru</p>
                     <p><i class="fas fa-phone"></i> 8 (938) 885-19-88</p>
-                    <div class="footer-telegram">
-                        <a href="https://t.me/dikie_tury" target="_blank" class="btn btn-telegram-small">
-                            <i class="fab fa-telegram"></i> Telegram
-                        </a>
-                    </div>
                 </div>
             </div>
 
