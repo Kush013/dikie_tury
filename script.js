@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Плавная прокрутка для навигации
+    // Плавная прокрутка для навигации с учетом хедера
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -29,14 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
 
                 // Закрытие мобильного меню
                 document.querySelector('.nav-links')?.classList.remove('active');
                 document.querySelector('.burger')?.classList.remove('active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             }
         });
     });
@@ -51,14 +56,55 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Бургер-меню для мобильных устройств
+    // Улучшенное бургер-меню для мобильных устройств
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
 
     if (burger && navLinks) {
+
+        // Обработчик клика по бургеру
         burger.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             burger.classList.toggle('active');
+
+            // Блокировка скролла при открытом меню
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+        });
+
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            });
+        });
+
+        // Закрытие меню при клике на затемнение
+        navLinks.addEventListener('click', function(e) {
+            if (e.target === navLinks) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+        });
+
+        // Закрытие меню при нажатии ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
         });
     }
 
@@ -154,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-// Загрузка основных активностей
+    // Загрузка основных активностей
     const activitiesContainer = document.getElementById('activities-container');
     if (activitiesContainer) {
         mainActivitiesData.forEach(activity => {
@@ -253,4 +299,33 @@ document.addEventListener('DOMContentLoaded', function() {
             heroContent.classList.add('animated');
         }
     }, 300);
+
+    // Фикс для мобильных отступов
+    function fixMobileLayout() {
+        const isMobile = window.innerWidth <= 768;
+        const container = document.querySelector('.container');
+
+        if (isMobile && container) {
+            // Проверяем и исправляем отступы
+            const checkPadding = () => {
+                const containerRect = container.getBoundingClientRect();
+                const bodyRect = document.body.getBoundingClientRect();
+
+                if (containerRect.left !== 15) {
+                    container.style.paddingLeft = '15px';
+                }
+                if (containerRect.right > bodyRect.right - 15) {
+                    container.style.paddingRight = '15px';
+                }
+            };
+
+            // Проверяем при загрузке и изменении размера
+            checkPadding();
+            window.addEventListener('resize', checkPadding);
+        }
+    }
+
+    // Запускаем фиксы при загрузке
+    fixMobileLayout();
+    window.addEventListener('resize', fixMobileLayout);
 });
