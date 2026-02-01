@@ -169,18 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
             tags: ["Пещеры", "Исследования", "Подземелье"]
         },
         {
-            name: "Рафтинг",
-            icon: "fas fa-water",
-            description: "Сплав по горным рекам на рафтах и каяках",
-            tags: ["Вода", "Адреналин", "Команда"]
-        },
-        {
-            name: "Парапланы",
-            icon: "fas fa-parachute-box",
-            description: "Полеты на парапланах с опытными инструкторами",
-            tags: ["Небо", "Полеты", "Высота"]
-        },
-        {
             name: "Парашютизм",
             icon: "fas fa-parachute-box",
             description: "Прыжки с парашютом для новичков и опытных",
